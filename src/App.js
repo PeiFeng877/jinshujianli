@@ -8,6 +8,7 @@ import DefaultTemplate from './templates/DefaultTemplate';
 import { ResumeProvider, useResume } from './contexts/ResumeContext';
 import { TemplateProvider } from './contexts/TemplateContext';
 import { renderToString } from 'react-dom/server';
+import FloatingHelpButton from './components/FloatingHelpButton';
 
 const { Header, Content, Footer } = Layout;
 
@@ -341,6 +342,8 @@ function App() {
           <Footer className="app-footer">
             锦书简历 {new Date().getFullYear()} Created by Jinshujianli Team
           </Footer>
+          {/* 悬浮帮助按钮 */}
+          <FloatingHelpButton url="https://oedwhv1gre.feishu.cn/docx/GPDsdztbJoaSBwxZawZcz8q1nse?from=from_copylink" />
         </Layout>
       </TemplateProvider>
     </ResumeProvider>
