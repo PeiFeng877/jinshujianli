@@ -1,0 +1,127 @@
+/* 简历预览容器 - 整体包裹元素 */
+.resume-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px; /* 设置较小的内边距，让预览区域更紧凑 */
+  background-color: #f5f5f5;
+  height: 100%;
+  overflow-y: auto; /* 允许垂直滚动，确保可以查看所有页面 */
+}
+
+/* 分页内容容器 - 包含所有简历页面 */
+.paginated-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* A4纸张样式 - 每一页简历的外观 */
+.resume-page {
+  width: 210mm; /* 标准A4纸宽度 */
+  margin-bottom: 30px; /* 页面之间的间距 */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果增强立体感 */
+  position: relative; /* 相对定位，用于放置页码 */
+}
+
+/* 分页内容容器 - 控制每页内容的显示区域 */
+.resume-page-content {
+  width: 100%;
+  overflow: hidden; /* 隐藏超出部分，确保每页只显示应有内容 */
+}
+
+/* 最后一页页面不需要底部边距 */
+.resume-page:last-child {
+  margin-bottom: 0;
+}
+
+/* 页码号指示器 - 显示当前页码和总页数 */
+.page-number {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #888;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  border-radius: 4px;
+}
+
+/* 加载提示 - 在计算页面高度时显示 */
+.loading-indicator {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+
+/* 小屏幕适配 - 响应式布局调整 */
+@media screen and (max-width: 210mm) {
+  .resume-page {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 210/297; /* 保持A4纸张的宽高比例 */
+  }
+  
+  .resume-page-content {
+    transform: scale(var(--page-scale, 1)); /* 根据需要缩放内容 */
+    transform-origin: top left; /* 从左上角开始变换 */
+  }
+}
+
+/* 打印样式 - 确保打印时的正确布局 */
+@media print {
+  body, html {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  
+  /* 隐藏导航和底部 */
+  .app-header, .app-footer, .form-section, .section-header, .export-pdf-btn {
+    display: none !important;
+  }
+  
+  /* 保持打印时的布局 */
+  .app-layout, .app-content, .resume-container, .preview-column {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+  
+  .resume-preview-wrapper {
+    padding: 0;
+    background-color: white;
+    overflow: visible;
+  }
+  
+  .resume-page {
+    width: 210mm;
+    height: 297mm; /* 标准A4纸高度 */
+    margin: 0;
+    padding: 0;
+    box-shadow: none; /* 打印时移除阴影 */
+    page-break-after: always; /* 每页后强制分页 */
+    page-break-inside: avoid; /* 避免页面内容被分割到不同页 */
+  }
+
+  .page-number {
+    display: none; /* 打印时隐藏页码 */
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, ul, ol, table {
+    page-break-inside: avoid; /* 避免标题、段落等被分割到不同页 */
+  }
+  
+  /* 保持所有文字的颜色和字体 */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: #000 !important;
+    font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  }
+}

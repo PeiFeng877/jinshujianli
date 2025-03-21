@@ -1,0 +1,324 @@
+/* 默认模板样式 */
+.default-template {
+  width: 100%;
+  height: auto; /* 取消固定高度，允许内容自适应 */
+  background-color: white;
+  padding: 0;
+  font-family: "微软雅黑", "Microsoft YaHei", sans-serif;
+  text-align: left;
+  position: relative;
+}
+
+/* 头部区域 - 深色背景 */
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2D3142;
+  color: white;
+  padding: 24px 30px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.header-content {
+  flex: 1;
+}
+
+/* 名字样式 - 一级标题 */
+.resume-name {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 10px 0;
+  line-height: 45px;
+}
+
+/* 照片样式 */
+.photo-container {
+  margin-left: 30px;
+}
+
+.resume-photo {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* 基本信息 */
+.basic-info {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #e0e0e0;
+  text-align: left;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.basic-info span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 联系信息 */
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #e0e0e0;
+}
+
+/* 次要信息 */
+.secondary-info {
+  font-size: 12px;
+  color: #e0e0e0;
+  text-align: left;
+  line-height: 24px;
+}
+
+/* 各个部分样式 */
+.resume-section {
+  margin-bottom: 30px;
+  padding: 0 30px;
+  text-align: left;
+}
+
+/* 模块名称 - 二级标题 */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 0;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  line-height: 27px;
+  text-align: left;
+}
+
+/* 自我介绍 */
+.self-description p {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #000000;
+  text-align: left;
+  white-space: pre-line;
+}
+
+/* 工作经历 */
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.company-position {
+  display: flex;
+  align-items: center;
+}
+
+/* 模块子标题 - 三级标题 */
+.company-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  line-height: 21px;
+}
+
+.job-title {
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.experience-date {
+  font-size: 14px;
+  color: #666;
+  line-height: 21px;
+}
+
+/* 文本 - 四级 */
+.job-description {
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.job-description p {
+  white-space: pre-line;
+}
+
+.job-duty {
+  margin-bottom: 5px;
+  line-height: 24px;
+}
+
+.duty-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.job-achievements {
+  margin-top: 10px;
+}
+
+.job-achievement-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* 教育经历 */
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.school-info {
+  display: flex;
+  align-items: center;
+}
+
+/* 模块子标题 - 三级标题 */
+.school-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  line-height: 21px;
+}
+
+.degree, .major {
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.edu-date {
+  font-size: 14px;
+  color: #666;
+  line-height: 21px;
+}
+
+/* 文本 - 四级 */
+.education-description p {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+  white-space: pre-line;
+}
+
+/* 项目经历 */
+.project-item {
+  margin-bottom: 15px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+}
+
+/* 模块子标题 - 三级标题 */
+.project-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  line-height: 21px;
+}
+
+.project-role {
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.project-date {
+  font-size: 14px;
+  color: #666;
+  line-height: 21px;
+}
+
+/* 文本 - 四级 */
+.project-description {
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+}
+
+.project-description p {
+  white-space: pre-line;
+}
+
+/* 技能、荣誉和证书 - 四级文本 */
+.skills-description,
+.honors-description,
+.certificates-description {
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+}
+
+.skills-description p,
+.honors-description p,
+.certificates-description p {
+  white-space: pre-line;
+}
+
+/* 公司与头衔 */
+.company-name, .job-title, .experience-date,
+.school-name, .degree, .major, .edu-date,
+.project-name, .project-role, .project-date {
+  line-height: 1.5;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .photo-container {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .default-template {
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resume-header {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
