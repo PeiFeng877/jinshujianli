@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Button, message } from 'antd';
 import { FilePdfOutlined } from '@ant-design/icons';
+import ReactGA from 'react-ga4';
 import './App.css';
 import ResumeForm from './components/ResumeForm';
 import ResumePreview from './components/ResumePreview';
@@ -19,6 +20,13 @@ function ExportPDFButton() {
   
   // 导出PDF功能
   const handleExportPDF = () => {
+    // 发送PDF导出事件
+    ReactGA.event({
+      category: 'User',
+      action: 'Export PDF',
+      label: 'Resume Export'
+    });
+    
     // 设置按钮为加载状态
     setLoading(true);
     message.loading({ content: '正在准备打印...', key: 'exportPdf' });
@@ -313,6 +321,11 @@ function ExportPDFButton() {
 }
 
 function App() {
+  useEffect(() => {
+    // 发送页面浏览事件
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   return (
     <ResumeProvider>
       <TemplateProvider>
